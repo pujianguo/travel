@@ -42,35 +42,36 @@ export default {
 @import '~styles/varibles.less';
 .header{
   display: flex;
-  line-height: .86rem;
+  line-height: .43rem;
   background: @bgColor;
   color: #fff;
   .header-left{
-    width: .64rem;
+    width: .32rem;
     float: left;
+    text-align: center;
     .icon-fanhui{
       text-align: center;
-      font-size: .4rem;
+      font-size: .2rem;
     }
   }
   .header-input{
     flex: 1;
-    height: .64rem;
-    line-height: .64rem;
-    margin-top: .12rem;
-    margin-left: .2rem;
-    padding-left: .2rem;
+    height: .32rem;
+    line-height: .32rem;
+    margin-top: .06rem;
+    margin-left: .1rem;
+    padding-left: .1rem;
     background: #fff;
-    border-radius: .1rem;
+    border-radius: .05rem;
     color: #ccc;
   }
   .header-right{
-    width: 1.24rem;
+    width: .62rem;
     float: right;
     text-align: center;
     .icon-jiantou{
-      margin-left: -.04rem;
-      font-size: .24rem;
+      margin-left: -.02rem;
+      font-size: .12rem;
     }
   }
 }

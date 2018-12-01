@@ -11,12 +11,6 @@
       </swiper-slide>
       <div class="swiper-pagination" slot="pagination"></div>
     </swiper>
-    <!-- <div class="icon" v-for="item in iconList" :key="item.id">
-      <div class="icon-img">
-        <img class="icon-img-content" :src="item.imgUrl" alt="">
-      </div>
-      <p class="icon-text">{{item.label}}</p>
-    </div> -->
   </div>
 </template>
 
@@ -78,6 +72,7 @@ export default {
 @import '~styles/mixins.less';
 // 移动端布局中，元素的高度不是固定的，是按照宽度计算的，而宽度也是不固定的，但是高度和宽度的比例一般是相同的
 // 宽度是100%，但是高度的百分比是相对父元素的高度，此时可将高度设置为0,设置padding-bottom为百分比，padding的百分比是相对元素自己的宽度的百分比。
+// 对于图片一般都会给img标签加个父元素，这个父元素的高度就是这样设定的，来防止网速较慢时，图片资源没，下面的内容会自动补上来。
 // 基本的设置高度方法
 // .box{
 //   overflow: hidden;
@@ -85,13 +80,14 @@ export default {
 //   padding-bottom: 50%; // 元素高度为宽度的50%
 // }
 .header-icons{
+  // overflow: hidden;
+  // height: 0;
+  // padding-bottom: 50%;
+  margin-top: .05rem;
   .swiper-container{
     height: 0;
     padding-bottom: 50%;
   }
-  overflow: hidden;
-  height: 0;
-  padding-bottom: 50%;
   // background: green;
   .icon{
     position: relative;
@@ -106,9 +102,9 @@ export default {
       top: 0;
       left: 0;
       right: 0;
-      bottom: .44rem;
+      bottom: .22rem;
       box-sizing: border-box;
-      padding: .1rem;
+      padding: .05rem;
       // background: blue;
       .icon-img-content{
         display: block;
@@ -121,8 +117,8 @@ export default {
       left: 0;
       right: 0;
       bottom: 0;
-      height: .44rem;
-      line-height: .44rem;
+      height: .22rem;
+      line-height: .22rem;
       color: @darkTextColor;
       text-align: center;
       .ellipsis();

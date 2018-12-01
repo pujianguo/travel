@@ -18,6 +18,7 @@
 export default {
   name: 'home-recommend',
   props: {
+    list: Array
   },
   components: {
   },

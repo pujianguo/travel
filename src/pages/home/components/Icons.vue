@@ -18,6 +18,7 @@
 export default {
   name: 'header-icons',
   props: {
+    // iconList: Array
   },
   components: {
   },

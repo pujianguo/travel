@@ -2,7 +2,7 @@
   <div class="home-weekend">
     <div class="weekend-title">周末去哪儿</div>
     <ul>
-      <li class="item border-bottom" v-for="item in weekendList" :key="item.id">
+      <li class="item  " v-for="item in weekendList" :key="item.id">
         <div class="item-img-wrapper">
           <img class="item-img" :src="item.src" :alt="item.title">
         </div>
@@ -19,6 +19,7 @@
 export default {
   name: 'home-weekend',
   props: {
+    list: Array
   },
   components: {
   },
@@ -50,7 +51,6 @@ export default {
 @import '~styles/mixins.less';
 .home-weekend{
   .weekend-title{
-    margin-top: .1rem;
     line-height: .4rem;
     background: #eee;
     text-indent: .1rem;

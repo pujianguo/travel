@@ -1,6 +1,6 @@
 <template>
   <div class="swiper-box">
-    <swiper :options="swiperOption">
+    <swiper :options="swiperOption" v-if="swiperSlides.length">
       <swiper-slide v-for="slide in swiperSlides" :key="slide.id">
         <img class="swiper-img" :src="slide.imgUrl" alt="">
       </swiper-slide>
@@ -16,6 +16,7 @@
 export default {
   name: 'HomeSwiper',
   props: {
+    list: Array
   },
   components: {
   },

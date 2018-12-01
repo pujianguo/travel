@@ -7,10 +7,12 @@
       <i class="iconfont icon-sousuo"></i>
       输入城市/景点/游玩主题
     </div>
-    <div class="header-right">
-      {{city}}
-      <i class="iconfont icon-jiantou"></i>
-    </div>
+    <router-link :to="'/city'">
+      <div class="header-right">
+        {{city}}
+        <i class="iconfont icon-jiantou"></i>
+      </div>
+    </router-link>
   </div>
 </template>
 
@@ -46,7 +48,7 @@ export default {
 @import '~styles/varibles.less';
 .header{
   display: flex;
-  line-height: .43rem;
+  line-height: @headerHeight;
   background: @bgColor;
   color: #fff;
   .header-left{
@@ -55,7 +57,7 @@ export default {
     text-align: center;
     .icon-fanhui{
       text-align: center;
-      font-size: .2rem;
+      font-weight: bold;
     }
   }
   .header-input{
@@ -73,6 +75,7 @@ export default {
     width: .62rem;
     float: right;
     text-align: center;
+    color: #fff;
     .icon-jiantou{
       margin-left: -.02rem;
       font-size: .12rem;

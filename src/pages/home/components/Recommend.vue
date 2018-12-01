@@ -48,6 +48,11 @@ export default {
 
 <style lang="less" scoped>
 @import '~styles/mixins.less';
+.border-bottom{
+  &:before, &:after{
+    border-color: #ccc;
+  }
+}
 .home-recommend{
   .recommend-title{
     margin-top: .1rem;

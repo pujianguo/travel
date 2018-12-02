@@ -1,6 +1,6 @@
 <template>
   <div class="home">
-    <home-header :city="city"></home-header>
+    <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>
     <home-icons :list="iconList"></home-icons>
     <home-recommend :list="recommendList"></home-recommend>
@@ -29,7 +29,7 @@ export default {
   },
   data () {
     return {
-      city: '',
+      lastCity: '',
       swiperList: [],
       iconList: [],
       recommendList: [],
@@ -37,16 +37,18 @@ export default {
     }
   },
   computed: {
+    city () {
+      return this.$store.state.common.city
+    }
   },
   watch: {
   },
   methods: {
     getHomeInfo () {
-      axios.get('/api/index.json').then(res => {
+      axios.get('/api/index.json?city=' + this.city).then(res => {
         res = res.data
         if (res.ret && res.data) {
           let data = res.data
-          this.city = data.city
           this.swiperList = data.swiperList
           this.iconList = data.iconList
           this.recommendList = data.recommendList
@@ -58,7 +60,15 @@ export default {
   created () {
   },
   mounted () {
+    this.lastCity = this.city
     this.getHomeInfo()
+  },
+  // 当使用keep-alive时，页面重新加载会执行此函数
+  activated () {
+    if (this.lastCity !== this.city) {
+      this.lastCity = this.city
+      this.getHomeInfo()
+    }
   }
 }
 </script>

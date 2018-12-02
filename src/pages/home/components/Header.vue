@@ -20,10 +20,6 @@
 export default {
   name: 'HomeHeader',
   props: {
-    city: {
-      type: String,
-      required: true
-    }
   },
   components: {
   },
@@ -32,6 +28,9 @@ export default {
     }
   },
   computed: {
+    city () {
+      return this.$store.state.common.city
+    }
   },
   watch: {
   },
@@ -72,7 +71,9 @@ export default {
     color: #ccc;
   }
   .header-right{
-    width: .62rem;
+    // width: .62rem;
+    min-width: .62rem;
+    padding: 0 .05rem;
     float: right;
     text-align: center;
     color: #fff;

@@ -1,9 +1,10 @@
 <template>
   <div class="city-alphabet">
     <ul class="list">
+      <!-- 阻止通过事件修饰符prevent阻止touchstart的默认行为，否则会拖动页面 -->
       <li class="item" v-for="item in letters" :key="item" :ref="item"
         @click="handleLetterClick"
-        @touchstart="handleTouchStart"
+        @touchstart.prevent="handleTouchStart"
         @touchmove="handleTouchMove"
         @touchend="handleTouchEnd"
       > {{item}} </li>

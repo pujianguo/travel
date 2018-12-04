@@ -60,8 +60,6 @@ export default {
   created () {
   },
   mounted () {
-    this.lastCity = this.city
-    this.getHomeInfo()
   },
   // 当使用keep-alive时，页面重新加载会执行此函数
   activated () {

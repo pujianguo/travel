@@ -32,7 +32,6 @@ export default {
   methods: {
     // 实现渐隐渐现效果
     handleScroll () {
-      console.log('scroll')
       const top = document.documentElement.scrollTop
       if (top > 60) {
         let opacity = top / 140

@@ -13,6 +13,8 @@
 </template>
 
 <script>
+import _ from 'lodash'
+
 export default {
   name: 'city-alphabet',
   props: {
@@ -49,13 +51,24 @@ export default {
     handleTouchStart (e) {
       this.touchStatus = true
     },
-    handleTouchMove (e) {
+    // throttle实现节流
+    handleTouchMove: _.throttle(function (e) {
+      console.log('hello')
+      const touchY = e.touches[0].clientY - 79 // 获取手指距离顶部的高度, 79为header高度
+      const index = Math.floor((touchY - this.startY) / 20) // 每个字母高度为20，获取字母的index
+      if (index >= 0 && index < this.letters.length) {
+        this.$emit('change', this.letters[index])
+      }
+    }, 16),
+    // setTimeout 实现节流
+    handleTouchMove1 (e) {
       if (this.touchStatus) {
         if (this.timer) {
           clearTimeout(this.timer)
         }
         // 减少执行频率，提升页面性能
         this.timer = setTimeout(() => {
+          console.log('hello')
           const touchY = e.touches[0].clientY - 79 // 获取手指距离顶部的高度, 79为header高度
           const index = Math.floor((touchY - this.startY) / 20) // 每个字母高度为20，获取字母的index
           if (index >= 0 && index < this.letters.length) {

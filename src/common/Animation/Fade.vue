@@ -6,25 +6,7 @@
 
 <script>
 export default {
-  name: 'animation-fade',
-  props: {
-  },
-  components: {
-  },
-  data () {
-    return {
-    }
-  },
-  computed: {
-  },
-  watch: {
-  },
-  methods: {
-  },
-  created () {
-  },
-  mounted () {
-  }
+  name: 'animation-fade'
 }
 </script>
 

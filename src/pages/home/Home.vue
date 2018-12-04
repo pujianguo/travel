@@ -1,4 +1,4 @@
-<template>
+src/pages/home/components/Swiper.vue<template>
   <div class="home">
     <home-header></home-header>
     <home-swiper :list="swiperList"></home-swiper>

@@ -66,7 +66,6 @@ export default {
           this.bannerImg = data.bannerImg
           this.gallaryImgs = data.gallaryImgs
           this.list = data.categoryList
-          console.log(data)
         }
       })
     }
@@ -82,7 +81,7 @@ export default {
 <style lang="less" scoped>
 .detail{
   .div{
-    height: 10rem;
+    height: 10rem; // 1000px ,为了看滚动效果
   }
 }
 </style>

@@ -30,7 +30,7 @@ export default {
   watch: {
   },
   methods: {
-    // 实现渐隐渐现效果
+    // 实现头部渐隐渐现效果
     handleScroll () {
       const top = document.documentElement.scrollTop
       if (top > 60) {
